@@ -97,19 +97,21 @@ form, .accounts-dialog{
 }
 input[type="submit"], button, .button, .btn{
 	-webkit-appearance: none;
-	@include border-radius(0px);
-	background:$red;
+	@include border-radius(6px);
+	background: $a2-red;
 	color:white;
 	text-align:center;
 	display:block;
-	padding:0px 10px;
+	padding: 0px 35px;
 	border:none;
 	font-size:16px;
 	cursor:pointer;
 	margin:0;
-	line-height:26px;
-	height:26px;
-	font-weight:normal;
+	line-height: 43px;
+	height: 43px;
+	font-weight: 600;
+	text-transform: uppercase;
+
 	&.disabled{
 		background:$lighter-grey;
 		pointer-events:none;

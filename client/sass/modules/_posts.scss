@@ -4,6 +4,9 @@
 }
 .posts{
 	position:relative;
+	padding: 25px;
+	@include box-sizing(border-box);
+	
 	.post{
 		position:relative;
 		width:100%;

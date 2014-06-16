@@ -30,7 +30,7 @@
 	@include transition(all, 300ms);
 }
 .grid-block{
-	background:#fff;
+	background: $a2-grey;
 	@include border-radius(3px);
 	// border:1px solid $light-blue;
 	padding:$grid-padding;

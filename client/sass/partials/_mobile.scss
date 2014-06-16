@@ -47,14 +47,19 @@
 	}
 }
 @media screen and (max-width: $break-small) {
+	.header {
+		margin-bottom: $grid-margin;
+	}
+
 	.header-button{
 		position:relative;
 		display:block;
 		margin-top:10px;
-		background:$red;
+		background: $a2-red;
 		color:white;
 		height:30px;
 		width:40px;
+
 		i{
 			position:absolute;
 			width:100%;

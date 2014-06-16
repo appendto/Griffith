@@ -47,6 +47,7 @@
 		padding:3px 10px;
 		font-size:13px;
 		&.no-notifications{
+			display: none;
 			background:white(0.3);
 			@include box-shadow(none);
 			color:$light-text;
