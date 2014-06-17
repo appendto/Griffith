@@ -30,11 +30,6 @@
 .mobile-nav, .content-wrapper{
 	@include single-transition(ease-out, left, 300ms, 0ms);
 }
-.content-wrapper{
-	position:relative;
-
-	left:0px;
-}
 .mobile-nav-open{
 	.mobile-nav{
 		left:0px;
@@ -47,8 +42,22 @@
 	}
 }
 @media screen and (max-width: $break-small) {
+	.content-wrapper{
+		position:relative;
+		left:0px;
+	}
+
+	.submit {
+		margin-top: 0;
+	}
+
 	.header {
+		position: relative;
 		margin-bottom: $grid-margin;
+
+		.header-inner:before {
+			display: none;
+		}
 	}
 
 	.header-button{

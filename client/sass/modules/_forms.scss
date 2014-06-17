@@ -1,3 +1,12 @@
+.form-col {
+	float: left;
+	width: 50%;
+
+	@media screen and (max-width: $break-small) {
+		width: 100%;
+	}
+}
+
 form, .accounts-dialog{
 	&.form-block{
 		background:$lightest-grey;
@@ -14,10 +23,11 @@ form, .accounts-dialog{
 		margin-bottom:$grid-padding;
 		>label{
 			float:left;
-			margin-right:10px;
+			width: 100px;
+			text-align: right;
 		}
 		.controls{
-			margin-left:150px;
+			margin-left:130px;
 			position:relative;
 			.inline-link{
 				position:absolute;
@@ -64,19 +74,21 @@ form, .accounts-dialog{
 		padding:5px 6px;
 		width:100%;
 		font-size:14px;
+		background: white;
+		color: $a2-black;
 		@include border-box;
-		border:1px solid $grey;
-		@include single-transition(border-color, 500ms);	
-		// @include box-shadow(inset 0px 0px 0px 1px black(0.2));
+		border: 0;
+		-webkit-appearance: none;
+		@include border-radius(4px);
+		@include box-shadow(0 1px 1px #cecece);
+
 		&:focus{
 			outline: none;
-			border-color:$red;
-			@include box-shadow(0px 0px 5px 0px rgba($red,0.3));
 		}
 	}
 	input[type="text"], input[type="password"], input[type="number"], .login-form input{
-		height:30px;
-		line-height:20px;
+		height: 41px;
+		line-height: 41px;
 	}
 	input[disabled='disabled']{
 		color:$light-text;
@@ -144,4 +156,24 @@ input[type="submit"], button, .button, .btn{
 	padding:10px;
 	font-size:14px;
 	@include box-shadow(0 1px 1px black(0.15));
+}
+
+.text-close {
+	display: none;
+}
+
+.btn-open {
+	background: #cecece;
+
+	.text-post {
+		display: none;
+	}
+
+	.text-close {
+		display: inline;
+	}
+
+	&:hover {
+		background: #bfbebe !important;
+	}
 }

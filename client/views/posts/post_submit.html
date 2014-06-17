@@ -1,41 +1,50 @@
 <template name="post_submit">
   <div class="grid submit">
     <form class="grid-block form-horizontal">
-      <div class="control-group">
-        <label class="control-label">{{i18n "URL"}}</label>
-        <div class="controls"><input id="url" type="text" value="" /></div>
-      </div>
-      <div class="control-group">
-        <label class="control-label">{{i18n "Title"}}</label>
-        <div class="controls"><input id="title" type="text" value="" /><a href="#" class="get-title-link inline-link">{{i18n "Suggest title"}}</a></div>
-      </div>
-      <div class="control-group">
-        <label class="control-label">{{i18n "Body"}}</label>
-        <div class="controls" id="editor"><textarea id="body" value="" class="input-xlarge"></textarea></div>
-      </div>
-      {{#if categoriesEnabled}}
-      <div class="control-group">
-        <label class="control-label">{{i18n "Category"}}</label>
-        <div class="controls">
-          {{#each categories}}
-          <label class="radio inline">
-            <input id="category_{{_id}}" type="checkbox" value="{{_id}}" name="category" /> {{name}}
-          </label>
-          {{/each}}
-        </div>
-      </div>
-      {{/if}}
-      {{#if isAdmin}}
+      <section class="form-col">
         <div class="control-group">
+          <label class="control-label">{{i18n "Title"}}</label>
+          <div class="controls"><input id="title" type="text" value="" /></div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">{{i18n "Description"}}</label>
+          <div class="controls" id="editor"><textarea id="body" value="" class="input-xlarge"></textarea></div>
+        </div>
+      </section>
+
+      <section class="form-col">
+        {{#if categoriesEnabled}}
+        <div class="control-group">
+          <label class="control-label">{{i18n "Category"}}</label>
+          <div class="controls">
+            {{#each categories}}
+            <label class="radio inline">
+              <input id="category_{{_id}}" type="checkbox" value="{{_id}}" name="category" /> {{name}}
+            </label>
+            {{/each}}
+          </div>
+        </div>
+        {{/if}}
+
+        <div class="control-group">
+          <label class="control-label">{{i18n "URL"}}</label>
+          <div class="controls"><input id="url" type="text" value="" /></div>
+        </div>
+
+        {{#if isAdmin}}
+        <!--<div class="control-group">
           <label class="control-label">{{i18n "Sticky?"}}</label>
           <div class="controls">
             <input type="checkbox" name="sticky" id="sticky" />
           </div>
         </div>
+
         <div class="control-group">
           <label class="control-label">{{i18n "Date"}}</label>
           <div class="controls"><input id="submitted" type="text" value="{{submittedDate}}" /><input id="submitted_hidden" type="hidden" value="{{submitted}}" /></div>
         </div>
+
         <div class="control-group">
           <label class="control-label">{{i18n "User"}}</label>
           <div class="controls">
@@ -45,7 +54,8 @@
               {{/each}}
             </select>
           </div>
-        </div>
+        </div>-->
+
         <div class="control-group">
           <label class="control-label">{{i18n "Status"}}</label>
           <div class="controls">
@@ -60,7 +70,9 @@
             </label>
           </div>
         </div>
-      {{/if}}
+        {{/if}}
+      </section>
+
       <div class="form-actions">
         <input type="submit" value="{{i18n "Submit"}}" />
       </div>
