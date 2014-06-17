@@ -50,3 +50,19 @@ body{
 #loading{
 	height:300px;
 }
+
+.footer {
+	float: left;
+	padding: 0;
+	border: 0;
+	width: 100%;
+	overflow: hidden;
+	margin: 25px auto;
+	text-align: center;
+	color: #111111;
+
+	img {
+		display: block;
+		margin: 0 auto 9px;
+	}
+}
