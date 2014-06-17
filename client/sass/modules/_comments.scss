@@ -84,6 +84,10 @@
 	.comment-reply{
 		display: inline-block;
 		margin-top: 10px;
+
+		&:hover {
+			color: $a2-red;
+		}
 	}
 	// &.comment-queued{
 	// 	&:after{
@@ -126,7 +130,7 @@
 .comment-content{
 	position:relative;
 	@extend .grid-block;
-	@include border-radius(0 3px 3px 3px);
+	@include border-radius(0 6px 6px 6px);
 	font-size:14px;
 	.comment-main{
 		margin-left:50px;
@@ -149,12 +153,16 @@
 		display:inline-block;
 		margin-right:4px;
 	}
-	color:$light-text;
+	color: #aeaeae;
+
+	a:hover {
+		color: $a2-red;
+	}
 	.comment-permalink{
 		position:relative;
 		@include hide-text;
 		width:20px;
-		color:$light-text;
+		color: #aeaeae;
 		margin:0;
 		&:before{
 			position:absolute;
@@ -164,7 +172,7 @@
 			text-indent:0;
 		}
 		&:hover:before{
-			color:$red;
+			color:$a2-red;
 		}
 	}
 }
@@ -198,7 +206,7 @@
 			text-align:center;
 			text-indent:0;
 			// color:$light-blue2;
-			color:$red;
+			color:$a2-red;
 		}
 		&:hover{
 			background:$highlight-color;
@@ -210,7 +218,7 @@
 	&.upvoted .upvote, &.downvoted .downvote{
 		cursor:default;
 		i{
-			color:$blue;
+			color:$a2-red;
 		}
 		&:hover{
 			background:white;
@@ -219,7 +227,7 @@
 	&.downvoted .upvote, &.upvoted .downvote{
 		cursor:default;
 		i{
-			color:$light-text;
+			color: #aeaeae;
 		}
 		&:hover{
 			background:white;
@@ -229,9 +237,9 @@
 .comment-new{
 	@extend .grid-block;
 	@extend .cf;
-	.comment-field{
-		margin-bottom:$grid-margin;
-	}
+	background: none;
+	@include box-shadow(none);
+	padding: 0;
 	.comment-submit{
 		@extend .cf;
 	}
@@ -253,5 +261,11 @@
 			left: 20px;
 			margin-left: -8px;
 		}
+	}
+}
+
+.single-post {
+	.post-actions {
+		display: none;
 	}
 }
