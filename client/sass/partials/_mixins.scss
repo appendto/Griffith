@@ -29,11 +29,11 @@
 }
 .grid-block{
 	background: $a2-grey;
-	@include border-radius(3px);
+	@include border-radius(6px);
 	// border:1px solid $light-blue;
 	padding:$grid-padding;
-	margin-bottom:$grid-margin;
-	@include box-shadow(0 1px 1px black(0.15));
+	margin-bottom: 15px;
+	@include box-shadow(0 1px 1px #cecece);
 }
 .cf{
 	@include cf;
