@@ -99,7 +99,7 @@ input[type="submit"], button, .button, .btn{
 	-webkit-appearance: none;
 	@include border-radius(6px);
 	background: $a2-red;
-	color:white;
+	color:white !important;
 	text-align:center;
 	display:block;
 	padding: 0px 35px;
@@ -116,8 +116,9 @@ input[type="submit"], button, .button, .btn{
 		background:$lighter-grey;
 		pointer-events:none;
 	}
-	&:link, &:hover, &:active, &:visited{
+	&:hover {
 		color:white;
+		background: $a2-red-dark;
 	}
 	&.inline{
 		display: inline-block;

@@ -8,10 +8,11 @@
 // 	}
 // }
 .header {
-	background: $a2-off-grey;
+	background: $a2-grey;
 	height: 62px;
 	position: relative;
 	border-top: 4px solid $a2-red;
+	border-bottom: 1px solid #cecece;
 	@include cf;
 
 	.site-nav{
@@ -58,6 +59,16 @@
 			// padding:0px 10px;
 		}
 	}
+
+	#submit.submit.button {
+		&:link {
+			background: $a2-red;
+		}
+		
+		&:hover {
+			background: $a2-red-dark;
+		}
+	}
 }
 // @media only screen and (-webkit-min-device-pixel-ratio: 1.5){
 // 	.header{
@@ -69,17 +80,25 @@
 // 		}
 // 	}
 // }
-.auth-buttons{
-	position:relative;
-	z-index:20;
-	float:right;
+.auth-buttons {
+	position: relative;
+	z-index: 20;
+	float: right;
 	margin: 20px 32px 0 0;
-	#login-buttons{
-		position:relative;
-		line-height:26px;
-		.accounts-dialog{
-			@extend .popover;
+	
+	#login-buttons {
+		position: relative;
+		line-height: 26px;
+		
+		.accounts-dialog {
+			background: $a2-grey;
+			border: 1px solid #cecece;
+			border-top: 0;
+			top: 50px;
+			@include border-radius(0);
+			@include box-shadow(none);
 		}
+
 		.account-link{
 			display:block;
 			color:white !important;
@@ -96,6 +115,7 @@
 			display:inline-block;
 			height:26px;
 		}
+
 		#login-buttons-password{
 			@extend .button;
 			float:none !important;
@@ -116,9 +136,15 @@
 				content:"Welcome, ";
 			}
 		}
+
+		.login-button {
+			background: $a2-black;
+			border: 0;
+		}
+
 		#login-buttons-logout{
 			color:white;
-			// background:none;
+			background: $a2-black;
 			border:none;
 			font-family:inherit;
 			font-size:inherit;
@@ -157,7 +183,10 @@
 			font-weight: 600;
 			height: 100%;
 			background: #aeaeae;
-			@include background-image(linear-gradient(top, #aeaeae 0%, #aeaeae 50%, #a6a5a5 50%, #a6a5a5 100%));
+
+			&:hover {
+				background: #a6a5a5;
+			}
 
 			&.intercom em{
 				&:before{
@@ -193,10 +222,10 @@
 	}
 	&.empty {
 		.search-field {
-			background: $a2-grey;
+			background: none;
 
 			&:focus{
-				background: #fdfdfd;
+				background: white;
 			}
 		}
 		.search-clear{
