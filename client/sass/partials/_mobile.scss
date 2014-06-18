@@ -47,7 +47,8 @@
 		left:0px;
 	}
 
-	.submit {
+	.submit,
+	.comment-page {
 		margin-top: 0;
 	}
 
@@ -86,6 +87,10 @@
 			display: block;
 			margin-bottom: 0;
 		}
+	}
+
+	.posts, .single-post {
+		margin-top: 0;
 	}
 
 	.mobile{

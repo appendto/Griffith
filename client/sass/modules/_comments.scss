@@ -69,6 +69,7 @@
 .comment{
 	margin-left:30px;
 	position:relative;
+	padding: 25px;
 
 	.comment-body{
 		@include single-transition(ease-out, opacity, 600ms, 0ms);
@@ -128,6 +129,8 @@
 	// }
 }
 .comment-content{
+	float: left;
+	width: 100%;
 	position:relative;
 	@extend .grid-block;
 	@include border-radius(0 6px 6px 6px);
@@ -234,19 +237,28 @@
 		}
 	}
 }
+
+.comment-page {
+	@include box-sizing(border-box);
+	float: left;
+	margin-top: 62px;
+	padding: 25px;
+}
+
 .comment-new{
+	@include box-sizing(border-box);
 	@extend .grid-block;
 	@extend .cf;
-	background: none;
-	@include box-shadow(none);
-	padding: 0;
+	float: left;
+	width: 100%;
+
 	.comment-submit{
+		margin: 25px 0 0;
 		@extend .cf;
 	}
+
 	.comment-page &{
-		margin-left:30px;
 		position: relative;
-		background: #ffffff;
 		&:after {
 			bottom: 100%;
 			border: solid transparent;
