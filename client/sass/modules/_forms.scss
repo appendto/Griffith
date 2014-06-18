@@ -25,6 +25,7 @@ form, .accounts-dialog{
 			float:left;
 			width: 100px;
 			text-align: right;
+			padding-top: 8px;
 		}
 		.controls{
 			margin-left:130px;
@@ -175,5 +176,101 @@ input[type="submit"], button, .button, .btn{
 
 	&:hover {
 		background: #bfbebe !important;
+	}
+}
+
+// Custom radios
+.radio {
+	position: relative;
+	margin: 0 30px 0 0;
+	padding: 10px 0 0 28px;
+	font-size: 14px;
+
+	input[type=radio] {
+		display: none;
+
+		&:checked + .radio-input {
+			&::after {
+				display: block;
+			}
+		}
+	}
+
+	.radio-input {
+		position: absolute;
+		left: 0;
+		top: 12px;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 18px;
+			height: 18px;
+			background: white;
+			@include border-radius(50%);
+			@include box-shadow(0 1px 1px #cecece);
+		}
+
+		&::after {
+			display: none;
+			content: "";
+			position: absolute;
+			top: 5px;
+			left: 5px;
+			width: 8px;
+			height: 8px;
+			@include border-radius(50%);
+			background: $a2-red;
+		}
+	}
+}
+
+// Custom checkboxes
+.checkbox {
+	position: relative;
+	margin: 0 30px 0 0;
+	padding: 10px 0 0 28px;
+	font-size: 14px;
+
+	input[type=checkbox] {
+		display: none;
+
+		&:checked + .checkbox-input {
+			&::after {
+				display: block;
+			}
+		}
+	}
+
+	.checkbox-input {
+		position: absolute;
+		left: 0;
+		top: 12px;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 16px;
+			height: 16px;
+			background: white;
+			@include border-radius(2px);
+			@include box-shadow(0 1px 1px #cecece);
+		}
+
+		&::after {
+			display: none;
+			content: "";
+			position: absolute;
+			top: 4px;
+			left: 4px;
+			width: 8px;
+			height: 8px;
+			@include border-radius(1px);
+			background: $a2-red;
+		}
 	}
 }

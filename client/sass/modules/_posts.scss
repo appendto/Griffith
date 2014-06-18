@@ -288,17 +288,27 @@
 }
 .more-button{
 	position:relative;
-	padding-bottom:10px;
-	a{
-		width:100%;
+	padding: 10px 25px;
+	float: left;
+	@include box-sizing(border-box);
+
+	a {
 		display:block;
 		height:$grid-unit;
-		background:black(0.075);
+		background: $a2-grey;
+		border: 1px solid $a2-grey;
 		text-align:center;
-		color:white;
+		color: $a2-black;
 		line-height:$grid-unit;
-		font-size:24px;
-		@include border-radius(3px);
+		font-size:20px;
+		font-weight: 500;
+		@include border-radius(6px);
+		@include box-shadow(0 1px 1px #cecece);
+		@include transition(border .3s ease);
+
+		&:hover {
+			border: 1px solid #cecece;
+		}
 	}
 }
 
