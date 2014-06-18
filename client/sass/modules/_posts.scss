@@ -313,15 +313,15 @@
 }
 
 // Post submit
-.submit {
+#submitDiv {
 	display: none;
 	margin-top: 62px;
 	margin-bottom: -62px;
 	float: left;
 	padding: 25px 25px 0;
 	@include box-sizing(border-box);
-}
 
-.form-shown {
-	display: block;
+	&.form-shown {
+		display: block;
+	}
 }
