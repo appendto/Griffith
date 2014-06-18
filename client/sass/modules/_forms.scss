@@ -68,6 +68,10 @@ form, .accounts-dialog{
 		a{
 			float:left;
 			display:block;
+			margin-top: 15px;
+		}
+		input {
+			margin-top: 15px;
 		}
 	}
 	input[type="text"], input[type="password"], input[type="number"], textarea, .login-form input{
@@ -273,4 +277,11 @@ input[type="submit"], button, .button, .btn{
 			background: $a2-red;
 		}
 	}
+}
+
+// Delete button
+form .form-actions .delete-link {
+	float: right;
+	margin-right: 25px;
+	background: $a2-black;
 }

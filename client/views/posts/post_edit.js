@@ -67,7 +67,7 @@ Template.post_edit.events({
     var categories = [];
     var url = $('#url').val();
     var shortUrl = $('#short-url').val();
-    var status = parseInt($('input[name=status]:checked').val());
+    var status = parseInt($('input[name=editStatus]:checked').val());
 
     e.preventDefault();
     if(!Meteor.user()){
@@ -75,16 +75,16 @@ Template.post_edit.events({
       return false;
     }
 
-    $('input[name=category]:checked').each(function() {
+    $('input[name=editCategory]:checked').each(function() {
       var categoryId = $(this).val();
       if(category = Categories.findOne(categoryId))
         categories.push(category);
     });
 
     var properties = {
-      headline:         $('#title').val(),
+      headline:         $('#editTitle').val(),
       shortUrl:         shortUrl,
-      body:             instance.editor.exportFile(),
+      body:             $('#editBody').val(),
       categories:       categories,
     };
 

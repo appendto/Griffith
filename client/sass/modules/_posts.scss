@@ -315,13 +315,17 @@
 // Post submit
 #submitDiv {
 	display: none;
-	margin-top: 62px;
 	margin-bottom: -62px;
-	float: left;
-	padding: 25px 25px 0;
-	@include box-sizing(border-box);
 
 	&.form-shown {
 		display: block;
 	}
+}
+
+// Edit and submit posts
+.submit {
+	margin-top: 62px;
+	float: left;
+	padding: 25px 25px 0;
+	@include box-sizing(border-box);
 }
