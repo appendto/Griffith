@@ -78,6 +78,16 @@
 			font-size:18px;
 		}
 	}
+
+	#submitDiv {
+		display: none;
+
+		& + #submitDiv {
+			display: block;
+			margin-bottom: 0;
+		}
+	}
+
 	.mobile{
 		display:block !important;
 	}
