@@ -1,12 +1,12 @@
 .grid {
 	width: 100%%;
-	@include single-transition(ease-out, margin, 300ms, 0ms);
+	@include single-transition(ease-out, margin, 400ms, 0ms);
 	.chat-open &{
 		margin-right:24%;
 		margin-left:2%;
 	}
 	.notifications-open &{
-		margin-left:24%;
+		margin-left: 200px;
 		margin-right:2%;
 	}
 }
@@ -45,14 +45,14 @@ $break-large: 1200px;
 
 			}
 			.tagline{
-				@include span-columns($cols - 1 omega, $cols);		
+				@include span-columns($cols - 1 omega, $cols);
 			}
 		}
 		.project{
 			@include span-columns(1, $cols);
 			&:nth-child(#{$cols+"n +"+$cols}){
 				@include span-columns(1 omega, $cols);
-			}	
+			}
 		}
 		.project{
 			margin-bottom:$gut-width*2;
@@ -90,7 +90,7 @@ $large-max-width:1200px;
 	$breakpoint: $min-width $cols;
 	@include grid($name, $breakpoint, $cols, $col-width, $gutter, $margin);
 	@include at-breakpoint($breakpoint){
-		
+
 	}
 }
 // @include large;
