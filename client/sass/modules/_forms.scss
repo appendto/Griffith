@@ -96,8 +96,7 @@ form, .accounts-dialog{
 		line-height: 41px;
 	}
 	input[disabled='disabled']{
-		color:$light-text;
-		background:$lightest-grey;
+		color: #ccc;
 	}
 	textarea{
 		min-height:100px;
@@ -108,7 +107,7 @@ form, .accounts-dialog{
 	}
 	.note{
 		padding: 5px 0;
-		color: $light-text;
+		color: #ccc;
 		font-size: 80%;
 	}
 }
