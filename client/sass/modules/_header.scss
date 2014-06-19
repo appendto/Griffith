@@ -163,15 +163,22 @@
 			border: 0;
 		}
 
-		#login-buttons-logout{
+		#login-buttons-logout,
+		.account-link {
+			text-align: center;
 			color:white;
 			background: $a2-black;
 			border:none;
-			font-family:inherit;
-			font-size:inherit;
-			padding:0;
-			height:26px;
 			text-shadow:none;
+			@include border-radius(4px);
+			margin: 0 0 4px;
+			padding: 4px 8px;
+			font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			line-height: 1.5;
+			font-size: 80%;
+			text-align: center;
+			color: #fff;
+			height: auto;
 		}
 	}
 }
