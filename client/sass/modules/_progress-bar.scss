@@ -1,0 +1,8 @@
+#iron-router-progress {
+	background-color: $a2-black;
+	@include box-shadow(0 0 5px rgba($a2-black, .5));
+
+	&.spinner:before {
+		border-color: $a2-black;
+	}
+}
