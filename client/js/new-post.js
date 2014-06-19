@@ -3,15 +3,18 @@ $(document).ready(function () {
 		formSubmit = '#formSubmit';
 
 	$(document).on('click', btn, function (e) {
-		e.preventDefault();
-
-		$(this).toggleClass('btn-open')
-
-		$(document).find('#submitDiv').toggleClass('form-shown');
+		// Check if user is logged in
+		if (! $(document).find('#login-sign-in-link').length > 0) {
+			e.preventDefault();
+			$(this).toggleClass('btn-open')
+			$(document).find('#submitDiv').toggleClass('form-shown');
+		}
 	});
 
 	$(document).on('click', formSubmit, function () {
 		$(btn).removeClass('btn-open');
 		$(document).find('#submitDiv').removeClass('form-shown');
 	});
+
+	
 });
