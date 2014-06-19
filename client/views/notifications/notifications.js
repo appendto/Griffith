@@ -7,7 +7,7 @@ Template.notifications.helpers({
   	if(notifications.length==0){
   		return i18n.t('No notifications');
   	}else if(notifications.length==1){
-  		return i18n.t('1 notification');
+  		return i18n.t('1');
   	}else{
   		return notifications.length+' '+i18n.t('notifications');
   	}
@@ -25,7 +25,7 @@ Template.notifications.events({
 		$('body').toggleClass('notifications-open');
 	},
 	'click .mark-as-read': function(){
-    Meteor.call('markAllNotificationsAsRead', 
+    Meteor.call('markAllNotificationsAsRead',
       function(error, result){
         error && console.log(error);
       }
