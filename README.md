@@ -40,6 +40,14 @@ Ryan Conaway** (and you can join the #griffith Slack channel).
 
 Also, please make sure you adhere to the [branching](#Branching) strategy above!
 
+### Contributors
+
+Ryan Conaway
+Trevan Hetzel
+Aaron Bushnell
+Ted Waller
+Jordan Kasper
+
 -----
 
 # Telescope
