@@ -9,6 +9,7 @@
     <form>
       <div class="twocol-left grid-block">
         <h2>{{i18n "Account"}}</h2>
+        <img class="user-avatar" src="{{avatarUrl}}"/>
         <div class="control-group">
           <label>{{i18n "Username"}}</label>
           <div class="controls">
@@ -16,22 +17,10 @@
           </div>
           <p class="note">Profile URL: {{profileUrl}}</p>
         </div>
-  <!--       <div class="control-group">
-          <label>Email</label>
-          <div class="controls">
-            <input id="email" name="email" disabled="disabled" type="text" value="{{email}}" />
-          </div>
-        </div> -->
         <div class="control-group">
           <label>{{i18n "Display Name"}}</label>
           <div class="controls">
             <input name="name" type="text" value="{{profile.name}}" />
-          </div>
-        </div>
-        <div class="control-group">
-          <label>{{i18n "Email"}}</label>
-          <div class="controls">
-            <input name="email" type="text" value="{{userEmail}}" />
           </div>
         </div>
         <div class="control-group">
@@ -55,15 +44,6 @@
           <div class="controls">
             <input name="site" type="text" value="{{profile.site}}" />
           </div>
-        </div>
-        <h3>{{i18n "Change Password?"}}</h3>
-        <div class="control-group">
-          <label>{{i18n "Old Password"}}</label>
-          <div class="controls"><input name="old_password" type="password" value="" /></div>
-        </div>
-        <div class="control-group">
-          <label>{{i18n "New Password"}}</label>
-          <div class="controls"><input name="new_password" type="password" value="" /></div>
         </div>
         <div class="control-group">
           <label class="control-label">{{i18n "Email Notifications"}}</label>
@@ -102,10 +82,8 @@
         </div>
         {{/if}}
       </div>
-
+      
       <div class="twocol-right grid-block">
-        <a href="/forgot_password">{{i18n "Forgot password?"}}</a>
-        <hr>
         <input type="submit" class="button" value="{{i18n "Save"}}" />
       </div>
     </form>
