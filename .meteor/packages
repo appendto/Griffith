@@ -6,7 +6,7 @@
 backbone
 accounts-base
 accounts-ui
-accounts-password
+# accounts-password
 spiderable
 email
 crypto-md5
