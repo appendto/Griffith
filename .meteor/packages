@@ -7,7 +7,6 @@ backbone
 accounts-base
 accounts-ui
 accounts-password
-accounts-twitter
 spiderable
 email
 crypto-md5
@@ -21,7 +20,6 @@ fast-render
 spin
 autoform
 collection2
-accounts-facebook
 iron-router-progress
 telescope-tags
 service-configuration

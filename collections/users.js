@@ -6,3 +6,5 @@ Meteor.users.allow({
   	return isAdminById(userId) || userId == doc._id;
   }
 });
+
+Accounts._options.restrictCreationByEmailDomain = 'appendto.com';

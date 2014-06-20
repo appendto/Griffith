@@ -13,8 +13,14 @@ Accounts.onCreateUser(function(options, user){
   if (options.email)
     user.profile.email = options.email;
     
-  if (getEmail(user))
+  if (getEmail(user)) {
     user.email_hash = getEmailHash(user);
+    user.avatarUrl = Gravatar.getGravatar(user);
+  } else if(user.services.google){
+    user.profile.email = user.services.google.email;
+    user.avatarUrl = user.services.google.picture;
+    user.username = getUserName(user);
+  }
   
   if (!user.profile.name)
     user.profile.name = user.username;
@@ -58,7 +64,6 @@ Accounts.onCreateUser(function(options, user){
       sendNotification(notification, admin);
     }
   });
-
 
   return user;
 });
