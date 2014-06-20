@@ -1,3 +1,56 @@
+# Griffith
+
+Girffith is the internal name for the [appendTo](http://appendto.com) implementation 
+of Telescope. There is information in the [Telescope](#Telescope) section below on 
+what the app is and some basic install info. This repo will be used for alterations 
+to the application for our use.
+
+## Branching
+
+In order to allow for updates from the source repository the `master` branch of 
+this fork should be kept __completely clean__ from any changes necessary for the 
+appendTo implementation. Instead, any changes should be merged into the `a2-build` 
+branch (from a feature or bug fix branch perhaps). If any code is intended to 
+be submitted back to the source repository then it should be kept in a branch and 
+submitted (via PR) to the Telelscope project.
+
+### Feature and Bug Development
+
+When a new feature begins development - or a bug fix is being worked on - create a 
+new branch off of `a2-build` with a semantic name that is prefixed with `a2-` to 
+distinguish them from branches pulled in from the source repository.
+
+For example, if you were working on the Google authentication piece you might create 
+an `a2-google-auth` branch off of `a2-build`. When complete, a PR should be opened 
+merging that feature branch back into `a2-build`. However, `a2-build` should 
+**never** be merged back into `master`.
+
+When changes occur in the source repository, those changes will be fetched into the 
+a2 fork's `master` branch, then merged down into the `a2-build` branch, tested, and 
+deployed.
+
+## Deployment
+
+This project is deployed on an a2 server manually (right now).
+
+## Contributing
+
+If you would like to contribute to the appendTo implementation **please contact 
+Ryan Conaway** (and you can join the #griffith Slack channel).
+
+Also, please make sure you adhere to the [branching](#Branching) strategy above!
+
+### Contributors
+
+* Ryan Conaway
+* Trevan Hetzel
+* Aaron Bushnell
+* Jordan Kasper
+
+-----
+
+# Telescope
+
 Telescope is an open-source, real-time social news site built with [Meteor](http://meteor.com)
 
 **Note:** Telescope is beta software. Most of it should work but it's still a little unpolished and you'll probably find some bugs. Use at your own risk :)
