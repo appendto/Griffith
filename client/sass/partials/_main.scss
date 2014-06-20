@@ -2,7 +2,7 @@ html, body, .outer-wrapper{
 	height:100%;
 }
 body{
-	background:#e0f1f7;
+	background: #fff;
 	// min-height:1500px;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5){
@@ -16,6 +16,8 @@ body{
 }
 .content-wrapper{
 	padding-bottom:10px;
+	margin: 0 auto;
+	max-width: 1230px;
 }
 #spinner{
 	margin: 100px 0;
@@ -49,4 +51,68 @@ body{
 }
 #loading{
 	height:300px;
+}
+
+.footer {
+	float: left;
+	padding: 0;
+	border: 0;
+	width: 100%;
+	overflow: hidden;
+	margin: 25px auto;
+	text-align: center;
+	color: #111111;
+
+	img {
+		display: block;
+		margin: 0 auto 9px;
+	}
+}
+
+.twocol-left {
+	float: left;
+	width: 75%;
+	@include box-sizing(border-box);
+
+	h3 {
+		color: $a2-black;
+		margin-top: 1.5em;
+		font-weight: 600;
+		font-size: 1.5em;
+	}
+
+	a {
+		color: $a2-red !important;
+		font-weight: 500;
+	}
+}
+
+.twocol-right {
+	float: right;
+	width: calc(25% - 25px);
+	margin-left: 25px;
+	@include box-sizing(border-box);
+
+	a {
+		font-weight: 500;
+		color: $a2-red !important;
+	}
+
+	hr {
+		border: 0;
+		margin: 1em 0;
+		height: 1px;
+		background: #ccc;
+	}
+
+	.button {
+		float: none;
+		color: white !important;
+		font-weight: normal;
+		margin: 0 auto;
+	}
+}
+
+a:link.give-invites {
+	color: $a2-red;
 }

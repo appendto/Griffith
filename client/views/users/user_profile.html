@@ -1,59 +1,67 @@
 <template name="user_profile">
-	<div class="grid">
+	<div class="grid admin-wrapper">
 		{{#with user}}
-		<div class="user-profile grid-block">
-			<table>
-				<tr>
-					<td colspan="2"><img class="user-avatar" src="{{avatarUrl}}"/></td>
-				</tr>
-				{{#if isAdmin}}
+		<div class="twocol-left grid-block">
+			<div class="user-profile">
+				<table>
 					<tr>
-						<td>{{i18n "ID"}}: </td>
-						<td>{{_id}}</td>
+						<td colspan="2"><img class="user-avatar" src="{{avatarUrl}}"/></td>
 					</tr>
-				{{/if}}
-				<tr>
-					<td>{{i18n "Name:"}}</td>
-					<td>{{profile.name}}</td>
-				</tr>
-				<tr>
-					<td>{{i18n "Member since"}}:</td>
-					<td>{{createdAtFormatted}}</td>
-				</tr>
-				<tr>
-					<td>{{i18n "Bio:"}}</td>
-					<td>{{profile.bio}}</td>
-				</tr>
-				{{#if getTwitterName}}
+					{{#if isAdmin}}
+						<tr>
+							<td>{{i18n "ID"}}: </td>
+							<td>{{_id}}</td>
+						</tr>
+					{{/if}}
 					<tr>
-						<td>Twitter: </td>
-						<td><a href="http://twitter.com/{{getTwitterName}}">{{getTwitterName}}</a></td>
+						<td>{{i18n "Name:"}}</td>
+						<td>{{profile.name}}</td>
 					</tr>
-				{{/if}}
-				{{#if getGitHubName}}
 					<tr>
-						<td>{{i18n "GitHub"}}:</td>
-						<td><a href="http://github.com/{{getGitHubName}}">{{getGitHubName}}</a></td>
+						<td>{{i18n "Member since"}}:</td>
+						<td>{{createdAtFormatted}}</td>
 					</tr>
-				{{/if}}
-				{{#if site}}
 					<tr>
-						<td>{{i18n "Site"}}:</td>
-						<td><a href="{{profile.site}}">{{profile.site}}</a></td>
+						<td>{{i18n "Bio:"}}</td>
+						<td>{{profile.bio}}</td>
 					</tr>
-				{{/if}}					
-			</table>
-			{{#if canEditProfile}}
-				<a class="button inline" href="/users/{{slug}}/edit">{{i18n "Edit profile"}}</a>
-			{{/if}}
-			{{#if canInvite}}
-				{{#if inviteCount}}
-					<a class="button inline invite-link" href="#">{{i18n "Invite"}} ({{inviteCount}} {{i18n "left"}})</a>
-				{{else}}
-					<a class="button inline disabled" href="#">{{i18n "Invite (none left)"}}</a>
+					{{#if getTwitterName}}
+						<tr>
+							<td>Twitter: </td>
+							<td><a href="http://twitter.com/{{getTwitterName}}">{{getTwitterName}}</a></td>
+						</tr>
+					{{/if}}
+					{{#if getGitHubName}}
+						<tr>
+							<td>{{i18n "GitHub"}}:</td>
+							<td><a href="http://github.com/{{getGitHubName}}">{{getGitHubName}}</a></td>
+						</tr>
+					{{/if}}
+					{{#if site}}
+						<tr>
+							<td>{{i18n "Site"}}:</td>
+							<td><a href="{{profile.site}}">{{profile.site}}</a></td>
+						</tr>
+					{{/if}}					
+				</table>
+				
+				{{#if canInvite}}
+					{{#if inviteCount}}
+						<a class="button inline invite-link" href="#">{{i18n "Invite"}} ({{inviteCount}} {{i18n "left"}})</a>
+					{{else}}
+						<a class="button inline disabled" href="#">{{i18n "Invite (none left)"}}</a>
+					{{/if}}
 				{{/if}}
-			{{/if}}
+			</div>
 		</div>
 		{{/with}}
+
+		<div class="twocol-right grid-block">
+		{{#with user}}
+			{{#if canEditProfile}}
+				<a class="button" href="/users/{{slug}}/edit">{{i18n "Edit profile"}}</a>
+			{{/if}}
+		{{/with}}
+		</div>
 	</div>
 </template>

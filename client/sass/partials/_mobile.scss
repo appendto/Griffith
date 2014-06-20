@@ -8,19 +8,19 @@
 	left:-280px;
 	top:0px;
 	bottom:0px;
-	background:#444;
+	background:#111111;
 	color:white;
 	@include box-shadow(inset -3px 0px 7px black(0.5));
 	ul{
 		li{
-			border-bottom:1px white(0.1) solid;
+			border-bottom:1px white(0.05) solid;
 			a{
 				display:block;
 				height:50px;
 				padding:0 10px;
 				line-height:50px;
 				&:hover{
-					background:$red;
+					background:$a2-red;
 					color:white;
 				}
 			}
@@ -29,11 +29,6 @@
 }
 .mobile-nav, .content-wrapper{
 	@include single-transition(ease-out, left, 300ms, 0ms);
-}
-.content-wrapper{
-	position:relative;
-
-	left:0px;
 }
 .mobile-nav-open{
 	.mobile-nav{
@@ -47,14 +42,50 @@
 	}
 }
 @media screen and (max-width: $break-small) {
+	.content-wrapper{
+		position:relative;
+		left:0px;
+	}
+
+	.submit,
+	.comment-page {
+		margin-top: 0;
+	}
+
+	.admin-wrapper {
+		padding-top: 0;
+	}
+
+	.user-edit {
+		margin-top: 0;
+	}
+
+	.twocol-left,
+	.twocol-right {
+		width: 100%;
+		float: left;
+		margin-left: 0;
+		overflow: hidden;
+	}
+
+	.header {
+		position: relative;
+		margin-bottom: $grid-margin;
+
+		.header-inner:before {
+			display: none;
+		}
+	}
+
 	.header-button{
 		position:relative;
 		display:block;
 		margin-top:10px;
-		background:$red;
+		background: $a2-red;
 		color:white;
 		height:30px;
 		width:40px;
+
 		i{
 			position:absolute;
 			width:100%;
@@ -64,6 +95,20 @@
 			font-size:18px;
 		}
 	}
+
+	#submitDiv {
+		display: none;
+
+		& + #submitDiv {
+			display: block;
+			margin-bottom: 0;
+		}
+	}
+
+	.posts, .single-post {
+		margin-top: 0;
+	}
+
 	.mobile{
 		display:block !important;
 	}
@@ -105,19 +150,37 @@
 				margin-top:-10px; //since the mobile header is 20px thinner than the normal one, take off 10px more
 			}
 		}
-		.auth-buttons{
+		.auth-buttons {
 			z-index:100;
 			margin:0;
+
 			#login-buttons{
-				display:block !important;
-			}
-			.login-link-and-dropdown-list{
-				right:0px !important;
-				position:static !important;
-				#login-dropdown-list{
-					right:0px !important;
-					margin:0px !important;
+				display: block !important;
+
+				a {
+					color: white;
 				}
+
+				.login-button {
+					background: $a2-black;
+					border: 0;
+				}
+			}
+
+			.login-link-and-dropdown-list {
+				position: absolute;
+				right: 0;
+
+				#login-dropdown-list{
+					top: 30px;
+					right: 0 !important;
+					margin: 0;
+					@include border-radius(0);
+					@include box-shadow(0);
+					border: 0;
+					background: $a2-red;
+				}
+
 				.login-link-text{
 					@extend .header-button;
 					@include hide-text2;
@@ -133,6 +196,7 @@
 						line-height:30px !important;
 						height:30px !important;
 						font-size:18px !important;
+						color: white;
 					}
 				}
 			}
@@ -149,12 +213,6 @@
 			}
 			&.submit{
 				float:right;
-			}
-			&:hover{
-				background:white;
-				i{
-					color:$red;
-				}
 			}
 		}
 	}

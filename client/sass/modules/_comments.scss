@@ -14,7 +14,6 @@
 		padding:10px 0 0 10px;
 		max-width:120px;
 		white-space:nowrap;
-		@extend cf;
 		&:after {
 			right: 100%;
 			border: solid transparent;
@@ -70,6 +69,7 @@
 .comment{
 	margin-left:30px;
 	position:relative;
+	padding: 25px;
 
 	.comment-body{
 		@include single-transition(ease-out, opacity, 600ms, 0ms);
@@ -85,6 +85,10 @@
 	.comment-reply{
 		display: inline-block;
 		margin-top: 10px;
+
+		&:hover {
+			color: $a2-red;
+		}
 	}
 	// &.comment-queued{
 	// 	&:after{
@@ -125,9 +129,11 @@
 	// }
 }
 .comment-content{
+	float: left;
+	width: 100%;
 	position:relative;
 	@extend .grid-block;
-	@include border-radius(0 3px 3px 3px);
+	@include border-radius(0 6px 6px 6px);
 	font-size:14px;
 	.comment-main{
 		margin-left:50px;
@@ -150,12 +156,16 @@
 		display:inline-block;
 		margin-right:4px;
 	}
-	color:$light-text;
+	color: #aeaeae;
+
+	a:hover {
+		color: $a2-red;
+	}
 	.comment-permalink{
 		position:relative;
 		@include hide-text;
 		width:20px;
-		color:$light-text;
+		color: #aeaeae;
 		margin:0;
 		&:before{
 			position:absolute;
@@ -165,7 +175,7 @@
 			text-indent:0;
 		}
 		&:hover:before{
-			color:$red;
+			color:$a2-red;
 		}
 	}
 }
@@ -199,7 +209,7 @@
 			text-align:center;
 			text-indent:0;
 			// color:$light-blue2;
-			color:$red;
+			color:$a2-red;
 		}
 		&:hover{
 			background:$highlight-color;
@@ -211,7 +221,7 @@
 	&.upvoted .upvote, &.downvoted .downvote{
 		cursor:default;
 		i{
-			color:$blue;
+			color:$a2-red;
 		}
 		&:hover{
 			background:white;
@@ -220,26 +230,35 @@
 	&.downvoted .upvote, &.upvoted .downvote{
 		cursor:default;
 		i{
-			color:$light-text;
+			color: #aeaeae;
 		}
 		&:hover{
 			background:white;
 		}
 	}
 }
+
+.comment-page {
+	@include box-sizing(border-box);
+	float: left;
+	margin-top: 62px;
+	padding: 25px;
+}
+
 .comment-new{
+	@include box-sizing(border-box);
 	@extend .grid-block;
 	@extend .cf;
-	.comment-field{
-		margin-bottom:$grid-margin;
-	}
+	float: left;
+	width: 100%;
+
 	.comment-submit{
+		margin: 25px 0 0;
 		@extend .cf;
 	}
+
 	.comment-page &{
-		margin-left:30px;
 		position: relative;
-		background: #ffffff;
 		&:after {
 			bottom: 100%;
 			border: solid transparent;
@@ -254,5 +273,11 @@
 			left: 20px;
 			margin-left: -8px;
 		}
+	}
+}
+
+.single-post {
+	.post-actions {
+		display: none;
 	}
 }

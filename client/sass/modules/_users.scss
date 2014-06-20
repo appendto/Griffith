@@ -1,14 +1,15 @@
 .filter-sort{
 	@include cf;
-	background: $lightest-grey;
+	background: $a2-black;
 	@include border-radius(3px);
 	padding: 8px 15px;
 	font-size: 13px;
 	a, span{
 		display: inline-block;
 		margin-right: 20px;
+		color: white;
 		&.active{
-			border-bottom: 2px solid $blue;
+			border-bottom: 2px solid $a2-red;
 		}
 		&:last-child{
 			margin-right: 0;
@@ -22,6 +23,22 @@
 	}
 
 }
+.user-table {
+	float: left;
+	width: 100%;
+
+	td a {
+		color: $a2-black;
+	}
+
+	.more-button {
+		margin-top: 2em;
+		padding: 25px;
+		@include border-radius(6px);
+		background: white;
+	}
+}
+
 .user-list, .user-table{
 	font-size: 13px;	
 	.user{
@@ -61,7 +78,9 @@ table{
 	}
 }
 .search-date-header{
-	background: $lightest-grey;
+	background: $a2-black;
+	color: white;
+	
 	th{
 		@include cf;
 	}

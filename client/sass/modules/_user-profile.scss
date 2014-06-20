@@ -1,8 +1,26 @@
+.admin-wrapper {
+	padding: 25px;
+	padding-top: 87px;
+	@include box-sizing(border-box);
+}
+
 .user-profile {
+	width: 100%;
+	float: left;
+	@include box-sizing(border-box);
+
 	.user-avatar{
 		height:80px;
 		width:80px;
 		display:block;
 		@include border-radius(80px);
 	}
+}
+
+.user-edit {
+	float: left;
+	width: 100%;
+	margin: 87px 0 0;
+	padding: 0 25px;
+	@include box-sizing(border-box);
 }

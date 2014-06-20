@@ -15,7 +15,7 @@ Template.comment_edit.rendered = function(){
 Template.comment_edit.events({
   'click input[type=submit]': function(e, instance){
     var comment = this;
-    var content = cleanUp(instance.editor.exportFile());
+    var content = $('#commentEditBody').val();
 
     e.preventDefault();
 

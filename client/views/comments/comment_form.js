@@ -12,7 +12,7 @@ Template.comment_form.events({
     e.preventDefault();
     $(e.target).addClass('disabled');
     clearSeenErrors();
-    var content = instance.editor.exportFile();
+    var content = $('#comment').val();
     if(getCurrentTemplate() == 'comment_reply'){
       // child comment
       var parentComment = this.comment;

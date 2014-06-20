@@ -29,6 +29,7 @@
     {{> mobile_nav}}
     <div class="content-wrapper template-{{pageName}}">
       {{> nav}}
+      {{> post_submit }}
       {{> error}}
       {{> yield}}
       {{> notifications}}
@@ -36,5 +37,9 @@
       <div class="overlay hidden"></div>
     </div>
     {{{extraCode}}}
+    <footer class="footer">
+      <img src="../../img/a2-icon.png">
+      appendTo Suggestion Box. &copy; 2014 appendTo, Inc.
+    </footer>
   </div>
 </template>
