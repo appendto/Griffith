@@ -45,7 +45,6 @@ Also, please make sure you adhere to the [branching](#Branching) strategy above!
 * Ryan Conaway
 * Trevan Hetzel
 * Aaron Bushnell
-* Ted Waller
 * Jordan Kasper
 
 -----
