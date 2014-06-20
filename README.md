@@ -31,12 +31,12 @@ deployed.
 
 ## Deployment
 
-This project is deployed using TeamCity.
+This project is deployed on an a2 server manually (right now).
 
 ## Contributing
 
 If you would like to contribute to the appendTo implementation **please contact 
-Jordan Kasper** (and you can join the #griffith Slack channel).
+Ryan Conaway** (and you can join the #griffith Slack channel).
 
 Also, please make sure you adhere to the [branching](#Branching) strategy above!
 
