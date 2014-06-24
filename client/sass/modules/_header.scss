@@ -317,6 +317,22 @@
 	}
 }
 
+@media screen and (min-width: $break-small) {
+	#login-buttons {
+		#login-buttons-google {
+			height: 33px;
+			line-height: 2.625em;
+			margin-top: -8px;
+			float: right;
+			margin-right: -20px;
+
+			.login-image {
+				top: 13px;
+			}
+		}
+	}
+}
+
 @media screen and (max-width: 1024px) {
 	.search {
 		display: none;
