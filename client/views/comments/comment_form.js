@@ -13,6 +13,7 @@ Template.comment_form.events({
     $(e.target).addClass('disabled');
     clearSeenErrors();
     var content = $('#comment').val();
+
     if(getCurrentTemplate() == 'comment_reply'){
       // child comment
       var parentComment = this.comment;
@@ -40,5 +41,6 @@ Template.comment_form.events({
         }
       });
     }
+    $('#comment').val('');
   }
 });

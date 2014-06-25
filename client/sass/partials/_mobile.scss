@@ -48,7 +48,8 @@
 	}
 
 	.submit,
-	.comment-page {
+	.comment-page,
+	.signin {
 		margin-top: 0;
 	}
 
@@ -125,6 +126,7 @@
 	}
 	.posts{
 		margin:0 10px;
+		width: calc(100% - 20px);
 		padding:0;
 		.post-rank{
 			display:none;
@@ -225,7 +227,6 @@
 				width:30px;
 			}
 			.post-info{
-				margin-left:30px;
 				padding:6px 4px 6px 8px;
 			}
 			.post-heading{

@@ -14,6 +14,7 @@ $(document).ready(function () {
 	$(document).on('click', formSubmit, function () {
 		$(btn).removeClass('btn-open');
 		$(document).find('#submitDiv').removeClass('form-shown');
+		$(document).find('#submitDiv form')[0].reset();
 	});
 
 	

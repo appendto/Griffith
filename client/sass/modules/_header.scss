@@ -101,6 +101,7 @@
 // 		}
 // 	}
 // }
+
 .auth-buttons {
 	position: relative;
 	z-index: 20;
@@ -126,6 +127,11 @@
 			margin-bottom:10px;
 			float:none;
 		}
+
+		.login-text-and-button {
+			margin-top: 12px;
+		}
+
 		a{
 			text-decoration:none;
 			color: $a2-black;
@@ -158,12 +164,29 @@
 			}
 		}
 
+		#login-buttons-logout {
+			background: none;
+			padding: 0;
+			color: $a2-red;
+			font-weight: 600;
+			margin-left: -.5em;
+
+			&::before {
+				content: "(";
+				color: #4a4444;
+			}
+
+			&::after {
+				content: ")";
+				color: #4a4444;
+			}
+		}
+
 		.login-button {
 			background: $a2-black;
 			border: 0;
 		}
 
-		#login-buttons-logout,
 		.account-link {
 			text-align: center;
 			color:white;
@@ -182,6 +205,17 @@
 		}
 	}
 }
+
+@media (min-width: $break-small) {
+	.auth-buttons {
+		#login-buttons {
+			.login-text-and-button {
+				margin-top: -1px;
+			}
+		}
+	}
+}
+
 .nav {
 	li {
 		float: left;
@@ -280,5 +314,27 @@
 		.search-clear{
 			display: none;
 		}
+	}
+}
+
+@media screen and (min-width: $break-small) {
+	#login-buttons {
+		#login-buttons-google {
+			height: 33px;
+			line-height: 2.625em;
+			margin-top: -8px;
+			float: right;
+			margin-right: -20px;
+
+			.login-image {
+				top: 13px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.search {
+		display: none;
 	}
 }
