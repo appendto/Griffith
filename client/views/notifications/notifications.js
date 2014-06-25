@@ -25,6 +25,7 @@ Template.notifications.events({
 		$('body').toggleClass('notifications-open');
 	},
 	'click .mark-as-read': function(){
+    $('body').toggleClass('notifications-open');
     Meteor.call('markAllNotificationsAsRead',
       function(error, result){
         error && console.log(error);
