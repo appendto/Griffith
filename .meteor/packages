@@ -6,7 +6,9 @@
 backbone
 accounts-base
 accounts-ui
-accounts-password
+# DO NOT INCLUDE THIS IN PRODUCTION!
+# We only leave it in so we can test some things locally
+# accounts-password
 spiderable
 email
 crypto-md5
