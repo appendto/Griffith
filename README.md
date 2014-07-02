@@ -1,5 +1,7 @@
 # Griffith
 
+<img src="http://teamcity.ap2.us:8111/app/rest/builds/buildType:%28id:solutions_delivery_Griffith_Staging%29/statusIcon"/>
+
 Girffith is the internal name for the [appendTo](http://appendto.com) implementation 
 of Telescope. There is information in the [Telescope](#Telescope) section below on 
 what the app is and some basic install info. This repo will be used for alterations 
