@@ -1,4 +1,9 @@
 .settings{
+    .checkbox {
+        input[type="checkbox"] {
+            display: inline-block;
+        }
+    }
 }
 
 .toolbox{
