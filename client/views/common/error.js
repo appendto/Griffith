@@ -1,3 +1,5 @@
 Template.error.errors= function(){
-  return Errors.find();
+  return Errors.find({}, {
+	limit: 2
+  });
 }
