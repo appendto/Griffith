@@ -7,8 +7,11 @@ Session.set('sessionId', Meteor.default_connection._lastSessionId);
 AutoForm.setDefaultTemplateForType('afCheckbox', 'custom');
 
 STATUS_PENDING=1;
-STATUS_APPROVED=2;
-STATUS_REJECTED=3;
+STATUS_SUGGESTED=2;
+STATUS_UNDERREVIEW=3;
+STATUS_WORKINGONIT=4;
+STATUS_IMPLEMENTED=5;
+STATUS_REJECTED=6;
 
 viewNav = typeof viewNav === 'undefined' ? [] : viewNav;
 viewNav = viewNav.concat([
