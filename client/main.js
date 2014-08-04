@@ -4,7 +4,6 @@ Session.set('today', new Date());
 Session.set('view', 'top');
 Session.set('postsLimit', getSetting('postsPerPage', 10));
 Session.set('sessionId', Meteor.default_connection._lastSessionId);
-AutoForm.setDefaultTemplateForType('afCheckbox', 'custom');
 
 STATUS_PENDING=1;
 STATUS_APPROVED=2;
