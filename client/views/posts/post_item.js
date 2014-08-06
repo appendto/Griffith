@@ -3,6 +3,17 @@ Template.post_item.created = function () {
 };
 
 Template.post_item.helpers({
+  statusName: function () {
+    var statusNames = [
+      'Pending',
+      'Suggested',
+      'Under Review',
+      'Working On It',
+      'Implemented',
+      'Rejected'
+    ];
+    return statusNames[this.status - 1];
+  },
   post: function(){
     // note: when the data context is set by the router, it will be "this.post". When set by a parent template it'll be "this"
     return this.post || this;
@@ -47,11 +58,11 @@ Template.post_item.helpers({
   },
   ago: function(){
     // if post is approved show submission time, else show creation time. 
-    time = this.status == STATUS_APPROVED ? this.submitted : this.createdAt;
+    time = this.status != STATUS_PENDING ? this.submitted : this.createdAt;
     return moment(time).fromNow();
   },
   timestamp: function(){
-    time = this.status == STATUS_APPROVED ? this.submitted : this.createdAt;
+    time = this.status != STATUS_PENDING ? this.submitted : this.createdAt;
     return moment(time).format("MMMM Do, h:mm:ss a");
   },
   voted: function(){
@@ -77,7 +88,7 @@ Template.post_item.helpers({
     return this.votes == 1 ? i18n.t('point') : i18n.t('points');
   },
   isApproved: function(){
-    return this.status == STATUS_APPROVED;
+    return this.status != STATUS_PENDING;
   }
 });
 

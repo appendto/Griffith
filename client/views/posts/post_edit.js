@@ -13,7 +13,7 @@ Template.post_edit.helpers({
     return Categories.find().count();
   },
   isApproved: function(){
-    return this.status == STATUS_APPROVED;
+    return this.status == STATUS_SUGGESTED;
   },
   isSticky: function(){
     return this.sticky ? 'checked' : '';
@@ -36,8 +36,17 @@ Template.post_edit.helpers({
   hasStatusPending: function(){
     return this.status == STATUS_PENDING ? 'checked' : '';
   },
-  hasStatusApproved: function(){
-    return this.status == STATUS_APPROVED ? 'checked' : '';
+  hasStatusSuggested: function(){
+    return this.status == STATUS_SUGGESTED ? 'checked' : '';
+  },
+  hasStatusUnderReview: function(){
+    return this.status == STATUS_UNDERREVIEW ? 'checked' : '';
+  },
+  hasStatusWorkingOnIt: function(){
+    return this.status == STATUS_WORKINGONIT ? 'checked' : '';
+  },
+  hasStatusImplemented: function(){
+    return this.status == STATUS_IMPLEMENTED ? 'checked' : '';
   },
   hasStatusRejected: function(){
     return this.status == STATUS_REJECTED ? 'checked' : '';
@@ -93,7 +102,7 @@ Template.post_edit.events({
     }
 
     if(isAdmin(Meteor.user())){
-      if(status == STATUS_APPROVED){
+      if(status == STATUS_SUGGESTED){
         if(!post.submitted){
           // this is the first time we are approving the post
           properties.submitted = new Date().getTime();

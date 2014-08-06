@@ -18,6 +18,7 @@
         {{/if}}
         <h3 class="post-heading">
           <a href="{{postLink}}" class="post-title" target="{{postTarget}}">{{headline}}</a>
+          <span class="status status-{{status}}">{{statusName}}</span>
           {{#if url}}<span class="post-domain">{{domain}}</span>{{/if}}
             {{#each categories}}
               <a href="{{categoryLink}}" class="post-category category-{{slug}}">{{name}}</a>
