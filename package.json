@@ -1,5 +1,10 @@
 {
     "name": "griffith",
     "private": true,
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "scripts": {
+        "provision": "apt-get install mongodb; curl https://install.meteor.com/ | sh; npm install -g meteorite",
+        "stop": "forever stop bundle/main.js",
+        "start": "./start.sh"
+    }
 }
