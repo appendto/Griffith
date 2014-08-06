@@ -1,8 +1,5 @@
 #!/bin/bash
 
-mrt install
-
-meteor bundle griffith.tgz
 tar xzf griffith.tgz
 
 export PORT=80
