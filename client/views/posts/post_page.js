@@ -8,9 +8,14 @@ Template.post_page.helpers({
     return html_body.autoLink();
   },
   canComment: function(){
-    return canComment(Meteor.user());
+    var isAccepted = this.status === STATUS_IMPLEMENTED;
+    var isRejected = this.status === STATUS_REJECTED;
+
+    if (canComment(Meteor.user()) && !isAccepted && !isRejected) {
+      return true;
+    }
   }
-}); 
+});
 
 Template.post_page.rendered = function(){
   if((scrollToCommentId=Session.get('scrollToCommentId')) && !this.rendered && $('#'+scrollToCommentId).exists()){
