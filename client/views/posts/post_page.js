@@ -13,6 +13,8 @@ Template.post_page.helpers({
 
     if (canComment(Meteor.user()) && !isAccepted && !isRejected) {
       return true;
+    } else {
+      return false;
     }
   }
 });
