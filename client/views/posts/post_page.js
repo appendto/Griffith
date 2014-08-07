@@ -8,6 +8,7 @@ Template.post_page.helpers({
     return html_body.autoLink();
   },
   canComment: function(){
+    // STATUS_* variables are declared in the main application (/client/main.js) file
     var isAccepted = this.status === STATUS_IMPLEMENTED;
     var isRejected = this.status === STATUS_REJECTED;
 
