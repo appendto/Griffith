@@ -2,16 +2,18 @@
   <li class="comment comment-displayed" id="{{_id}}">
    <div class="comment-body">
       <div class="comment-content">
-        <div class="comment-actions {{#if upvoted}}upvoted{{else}}not-upvoted{{/if}} {{#if downvoted}}downvoted{{else}}not-downvoted{{/if}}">
-          <a class="upvote" href="#">
-            <i class="icon-up"></i>
-            <span>{{i18n "upvote"}}</span>
-          </a>
-          <a class="downvote" href="#">
-            <i class="icon-down"></i>
-            <span>{{i18n "downvote"}}</span>
-          </a>
-        </div>
+        {{#if isModifiable}}
+          <div class="comment-actions {{#if upvoted}}upvoted{{else}}not-upvoted{{/if}} {{#if downvoted}}downvoted{{else}}not-downvoted{{/if}}">
+            <a class="upvote" href="#">
+              <i class="icon-up"></i>
+              <span>{{i18n "upvote"}}</span>
+            </a>
+            <a class="downvote" href="#">
+              <i class="icon-down"></i>
+              <span>{{i18n "downvote"}}</span>
+            </a>
+          </div>
+        {{/if}}
         <div class="user-avatar"><img src="{{user_avatar}}" /></div>
         <div class="comment-main">
           <div class="comment-meta">
@@ -27,7 +29,7 @@
             {{/if}}
           </div>
           <div class="comment-text markdown">{{{body_formatted}}}</div>
-          {{#if getSetting "nestedComments" true}}
+          {{#if isModifiable}}
             <a href="/comments/{{_id}}/reply" class="comment-reply goto-comment">{{i18n "Reply"}}</a>
           {{/if}}
         </div>
