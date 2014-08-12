@@ -5,45 +5,45 @@
       <a id="mobile-menu" href="#menu" class="mobile mobile-button menu"><i class="icon-menu"></i><span>{{i18n "Menu"}}</span></a>
 
       <ul class="nav site-nav desktop">
-        {{#if canView}}
-        <li class="dropdown">
-          <a class="View" href="/">{{i18n "View"}}</a>
-          <div class="dropdown-menu">
-            <ul role="menu" aria-labelledby="dLabel">
-              {{#each viewNav}}
-                {{> navItem this}}
-              {{/each}}
-            </ul>
-          </div>
-        </li>
+        {{#if canPost}}
+          <li class="dropdown">
+            <a class="View" href="/">{{i18n "View"}}</a>
+            <div class="dropdown-menu">
+              <ul role="menu" aria-labelledby="dLabel">
+                {{#each viewNav}}
+                  {{> navItem this}}
+                {{/each}}
+              </ul>
+            </div>
+          </li>
+          {{#if hasCategories}}
+          <li class="dropdown">
+            <a class="categories" href="/">{{i18n "Categories"}}</a>
+            <div class="dropdown-menu">
+              <ul role="menu" aria-labelledby="dLabel">
+                {{# each categories}}
+                  <li><a class="pending" href="{{categoryLink}}">{{name}}</a></li>
+                {{/each}}
+              </ul>
+            </div>
+          </li>
+          {{/if}}
+          {{#if isAdmin}}
+          <li class="dropdown">
+            <a class="admin" href="/">{{i18n "Administration"}}</a>
+            <div class="dropdown-menu">
+              <ul role="menu" aria-labelledby="dLabel">
+                {{#each adminNav}}
+                  {{> navItem this}}
+                {{/each}}
+              </ul>
+            </div>
+          </li>
+          {{/if}}
+          <li>
+            {{> search}}
+          </li>
         {{/if}}
-        {{#if hasCategories}}
-        <li class="dropdown">
-          <a class="categories" href="/">{{i18n "Categories"}}</a>
-          <div class="dropdown-menu">
-            <ul role="menu" aria-labelledby="dLabel">
-              {{# each categories}}
-                <li><a class="pending" href="{{categoryLink}}">{{name}}</a></li>
-              {{/each}}
-            </ul>
-          </div>
-        </li>
-        {{/if}}
-        {{#if isAdmin}}
-        <li class="dropdown">
-          <a class="admin" href="/">{{i18n "Administration"}}</a>
-          <div class="dropdown-menu">
-            <ul role="menu" aria-labelledby="dLabel">
-              {{#each adminNav}}
-                {{> navItem this}}
-              {{/each}}
-            </ul>
-          </div>
-        </li>
-        {{/if}}
-        <li>
-          {{> search}}
-        </li>
       </ul>
 
       {{#if logo_url}}
