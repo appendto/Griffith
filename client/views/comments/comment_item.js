@@ -80,7 +80,7 @@ Template.comment_item.rendered=function(){
       // note: testing on the class works because Meteor apparently preserves newly assigned CSS classes
       // across template renderings
       // TODO: save scroll position
-      
+
       // get comment author name
       var user=Meteor.users.findOne(comment.userId);
       var author=getDisplayName(user);
@@ -100,6 +100,20 @@ Template.comment_item.rendered=function(){
 
 
 Template.comment_item.helpers({
+  isModifiable: function() {
+    // STATUS_* variables are declared in the main application (/client/main.js) file
+    var isAccepted = Posts.findOne(this.post).status === STATUS_IMPLEMENTED;
+    var isRejected = Posts.findOne(this.post).status === STATUS_REJECTED;
+
+    // Check if nested comments are enabled
+    var canNest = getSetting('nestedComments');
+
+    if (canNest && !isAccepted && !isRejected) {
+      return true;
+    } else {
+      return false;
+    }
+  },
   full_date: function(){
     var submitted = new Date(this.submitted);
     return submitted.toString();
@@ -149,7 +163,7 @@ Template.comment_item.helpers({
     var user = Meteor.users.findOne(this.userId);
     if(user)
       return getProfileUrl(user);
-  }  
+  }
 });
 
 Template.comment_item.events({

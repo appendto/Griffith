@@ -8,9 +8,17 @@ Template.post_page.helpers({
     return html_body.autoLink();
   },
   canComment: function(){
-    return canComment(Meteor.user());
+    // STATUS_* variables are declared in the main application (/client/main.js) file
+    var isAccepted = this.status === STATUS_IMPLEMENTED;
+    var isRejected = this.status === STATUS_REJECTED;
+
+    if (canComment(Meteor.user()) && !isAccepted && !isRejected) {
+      return true;
+    } else {
+      return false;
+    }
   }
-}); 
+});
 
 Template.post_page.rendered = function(){
   if((scrollToCommentId=Session.get('scrollToCommentId')) && !this.rendered && $('#'+scrollToCommentId).exists()){
