@@ -15,19 +15,18 @@
 	position: relative;
 	padding: 25px;
 	@include box-sizing(border-box);
-	
+
 	.post {
 		position: relative;
-		float: left;
 		width: 100%;
 		@include cf;
-		
+
 		&.animate {
 			@include single-transition(ease-out, top, 400ms, 0ms);
 		}
 
 		&.inactive {
-			.post-content, 
+			.post-content,
 			.post-actions li a {
 				background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVQYV2NkIALMnDlTkpGQOpCi9PT053gVwhSBDMOpEFkRToXoirAqxKYIQyEuRSgK8SmCKySkCKyQGEUghQC5OyXvW/4BHwAAAABJRU5ErkJggg==');
 			}
@@ -125,7 +124,7 @@
 			}
 			&:hover{
 				color:$a2-red;
-			}	
+			}
 		}
 		.post-domain{
 			color: #aeaeae;
@@ -289,7 +288,7 @@
 	}
 	.post-actions li a:hover{
 		background:$highlight-color url("/img/bg-header.png") top center;
-	}	
+	}
 }
 .more-button{
 	position:relative;

@@ -1,7 +1,7 @@
 .queue-container{
 	position:relative;
 	height:0px;
-	@include single-transition(ease-out, opacity, 400ms, 0ms);	
+	@include single-transition(ease-out, opacity, 400ms, 0ms);
 	ul{
 		position:absolute;
 		// right:0;
@@ -59,7 +59,7 @@
 			// @extend .grid-block;
 			// display:block;
 			// padding:3px 8px;
-			
+
 			// white-space:nowrap;
 
 			// font-size:14px;
@@ -249,7 +249,6 @@
 	@include box-sizing(border-box);
 	@extend .grid-block;
 	@extend .cf;
-	float: left;
 	width: 100%;
 
 	.comment-submit{
